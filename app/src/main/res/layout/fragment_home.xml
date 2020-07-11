@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:text="Home" />
+        android:id="@+id/postsRecyclerView" />
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

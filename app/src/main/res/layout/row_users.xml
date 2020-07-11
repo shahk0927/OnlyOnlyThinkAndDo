@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#fff"
+    app:contentPadding="3dp">
+
+    <LinearLayout
+        android:id="@+id/users_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/avatarIv"
+            android:layout_width="55dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/chat_users"
+            android:layout_height="55dp"
+            />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7.5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Person Name"
+                android:textSize="19dp"
+                android:textColor="#000"
+                />
+            <TextView
+                android:id="@+id/emailTv"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Person Email"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/blockIv"
+            android:layout_gravity="center_vertical"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_unblocked_green"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,92 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_gradient"
     android:padding="20dp"
     tools:context=".LoginActivity">
 
+
     <TextView
+        android:id="@+id/tvLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="Login"
-        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:textColor="#E1F1EF"
+        android:textSize="45sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/emailET"/>
 
-    <android.support.design.widget.TextInputLayout
+
+    <EditText
+        android:id="@+id/emailET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/emailTIL">
-        <EditText
-            android:id="@+id/emailET"
-            android:inputType="textEmailAddress"
-            android:hint="Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/passwordTIL"
-        android:layout_below="@id/emailTIL"
-        app:passwordToggleEnabled="true">
-
-        <EditText
-            android:id="@+id/passwordET"
-            android:inputType="textPassword"
-            android:hint="Password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/login_btn"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordTIL"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/edittextdesign"
+        android:defaultFocusHighlightEnabled="false"
+        android:drawableStart="@drawable/email"
         android:drawablePadding="5dp"
-        android:text="Login" />
+        android:fontFamily="@font/roboto_medium"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:outlineSpotShadowColor="@color/colorWhite"
+        android:padding="20dp"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#FCF1E8E8"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_show_hide_login"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="10dp"
+        app:hintEnabled="false"
+        app:passwordToggleTint="@color/colorIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailET">
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:padding="20dp"
+        android:textSize="17dp"
+        android:background="@drawable/edittextdesign"
+        android:drawableStart="@drawable/password"
+        android:drawableTint="@color/colorIcon"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="5dp"
+        android:outlineSpotShadowColor="@color/colorWhite"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#FCF1E8E8"
+        android:textColorHint="@color/colorWhite"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailET" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/recoverPassTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:text="Forgot Password? Recover"
-        android:layout_below="@id/login_btn"
-        android:textColor="@color/colorBlack"/>
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_show_hide_login" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/googleLoginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/recoverPassTv">
-    </com.google.android.gms.common.SignInButton>
-
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="17dp"
+        android:background="@drawable/login_button"
+        android:drawablePadding="8dp"
+        android:text="Login"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recoverPassTv" />
 
     <TextView
         android:id="@+id/nothave_accountTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Not have an account? Register"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Create Account Here"
         android:textAlignment="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/colorBlack"
-        android:layout_marginBottom="20dp"/>
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
