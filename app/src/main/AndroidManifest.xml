@@ -1,26 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.thinkanddo">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.group.amplifate">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo_4"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_4"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".FinishedGoalActivity"
+            android:launchMode="singleTop"/>
+<activity android:name=".PrivacyPolicyActivity"/>
+        <activity android:name=".MyGoalsActivityOfficial"
+            android:launchMode="singleTop"/>
+
+        <activity android:name=".DefineStepActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".DefineMyGoalsActivity"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".PostLikedByActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".DemoActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MyGoalFragment"
+            android:launchMode="singleTop" />
+
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
+
+        <activity android:name=".SettingsActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".PostDetailActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".TheirProfileActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ChatActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeNo" />
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".AddPostActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".GoalDescriptionActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".DashboardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <service
+            android:name=".notifications.FirebaseService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".notifications.FirebaseMessaging"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Here you can define file provider -->
+        <!-- Set the android: exported attribute to false -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.group.amplifate.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

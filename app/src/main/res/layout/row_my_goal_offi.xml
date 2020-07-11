@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="1dp"
+    android:padding="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/colorWhite">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="3dp"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/goal_profileLayouto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/goal_title_Tvo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginBottom="2dp"
+                android:text="Goal Title"
+                android:textColor="#000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/goal_description_Tvo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="gravity"
+                android:layout_marginBottom="3dp"
+                android:textSize="17dp"
+                android:text="Description"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:id="@+id/gTimeTvo"
+                android:layout_width="match_parent"
+                android:text="33 min"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="3dp"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/moreBtn"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_black"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
